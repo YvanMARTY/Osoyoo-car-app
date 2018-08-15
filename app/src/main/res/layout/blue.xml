@@ -22,7 +22,7 @@
 		    android:textColor="#ffffff"
 		  android:layout_weight="1" 
 		  android:textSize="15sp"
-		  android:text="连接">
+		  android:text="Connexion">
 		  </Button>
 		  
 		  <TextView   
@@ -35,7 +35,7 @@
 		  android:layout_width="wrap_content" 
 		  	  android:layout_height="50dip" 
 		  android:layout_weight="1"  
-		  android:text="修改参数" 
+		  android:text="Modifier les paramètres"
 		    android:textColor="#ffffff"
 		  android:textSize="15sp"
 		  android:id="@+id/b_sz">
@@ -59,7 +59,7 @@
 		    android:textColor="#ffffff"
 		  android:layout_weight="1" 
 		  android:textSize="15sp"
-		  android:text="避障模式">
+		  android:text="Mode d'évitement d'obstacles">
 		  </Button>
 		  
 		  <TextView   
@@ -72,7 +72,7 @@
 		  android:layout_width="wrap_content" 
 		  	  android:layout_height="50dip" 
 		  android:layout_weight="1"  
-		  android:text="循迹模式" 
+		  android:text="Mode de suivi"
 		    android:textColor="#ffffff"
 		  android:textSize="15sp"
 		  android:id="@+id/b_xj">
