@@ -1,0 +1,123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:1-56:12
+	package
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:3:7-42
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:5:7-32
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:4:7-30
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:6:5-8:41
+INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:6:5-8:41
+	android:targetSdkVersion
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:8:9-38
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:7:9-35
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+		INJECTED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:9:5-74
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:9:22-71
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:10:5-68
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:10:22-65
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:12:2-78
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:12:19-75
+uses-permission#android.permission.INTERNET
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:15:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:16:5-78
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:16:22-76
+application
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:21:5-55:19
+	android:label
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:21:18-50
+	android:icon
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:22:18-54
+activity#com.vk.BTcar.LoadingActivity
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:24:9-33:20
+	android:screenOrientation
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:26:19-55
+	android:label
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:25:19-51
+	android:configChanges
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:27:19-69
+	android:theme
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:28:19-83
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:24:19-62
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:29:13-32:29
+action#android.intent.action.MAIN
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:31:17-77
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:31:27-74
+activity#com.vk.BTcar.DeviceListActivity
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:34:9-37:72
+	android:label
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:35:19-56
+	android:configChanges
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:37:19-69
+	android:theme
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:36:19-67
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:34:19-65
+activity#com.vk.BTcar.BTcar
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:39:14-44:79
+	android:screenOrientation
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:42:13-49
+	android:label
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:41:13-45
+	android:configChanges
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:43:13-63
+	android:theme
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:44:13-77
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:40:13-46
+activity#com.vk.BTcar.MainActivity
+ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:47:13-52:79
+	android:screenOrientation
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:50:13-49
+	android:label
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:49:13-45
+	android:configChanges
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:51:13-63
+	android:theme
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:52:13-77
+	android:name
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:48:13-53
