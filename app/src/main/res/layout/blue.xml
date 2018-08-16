@@ -13,19 +13,19 @@
 		  android:layout_marginLeft="40dip"
 		  android:layout_marginRight="40dip" 
 		  android:gravity="center">
-		    
-		  <Button 
-		   android:background="@drawable/button_style" 
-		   android:layout_width="wrap_content" 
-		  android:layout_height="50dip" 
+
+		  <Button
+		   android:background="@drawable/button_style"
+		   android:layout_width="wrap_content"
+		  android:layout_height="50dip"
 		  android:id="@+id/b_con"
 		    android:textColor="#ffffff"
-		  android:layout_weight="1" 
+		  android:layout_weight="1"
 		  android:textSize="15sp"
 		  android:text="Connexion">
 		  </Button>
-		  
-		  <TextView   
+
+		  <TextView
             android:layout_width="50dip"   
             android:layout_height="wrap_content"  
              /> 
@@ -77,10 +77,11 @@
 		  android:textSize="15sp"
 		  android:id="@+id/b_xj">
 		  </Button>
-	  </LinearLayout>  
-	  
-     	      	  
-        <TextView   
+
+				  </LinearLayout>
+
+
+	<TextView
             android:id="@+id/title"
             android:layout_width="match_parent"   
             android:layout_height="12dip"  
@@ -88,13 +89,23 @@
              android:gravity="center"
                android:textSize="10dip"
                android:layout_centerHorizontal="true"
-     />  	  
-     	  
-     	  
- 
-        
-     
-     <Button
+     />
+
+
+	<Button
+		android:id="@+id/b_tir"
+		android:layout_width="wrap_content"
+		android:layout_height="50dip"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/scro"
+		android:layout_marginTop="-15dip"
+		android:layout_weight="1"
+		android:background="@drawable/button_style"
+		android:text="Tir"
+		android:textColor="#ffffff"
+		android:textSize="15sp"></Button>
+
+	<Button
         android:id="@+id/but_below"
         android:background="@drawable/back_style" 
         android:layout_width="75dip"
@@ -102,20 +113,28 @@
         android:layout_alignParentBottom="true" 
         android:layout_centerHorizontal="true"
          android:layout_marginBottom="15dip"
-     />   
-    
- 
+     />
+
+
      <Button
         android:id="@+id/but_stop"
-        android:background="@drawable/stop_style" 
+        android:background="@drawable/stop_style"
         android:layout_width="75dip"
-        android:layout_height="75dip"  
-        android:layout_above="@id/but_below"    
+        android:layout_height="75dip"
+        android:layout_above="@id/but_below"
         android:layout_centerHorizontal="true"
-        />  
-        
-     
-   <Button
+        />
+
+
+	<Button
+		android:id="@+id/but_stop2"
+		android:layout_width="75dip"
+		android:layout_height="75dip"
+		android:layout_above="@id/but_below"
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/stop_style" />
+
+	<Button
         android:id="@+id/but_up" 
         android:background="@drawable/up_style" 
               android:layout_width="75dip"

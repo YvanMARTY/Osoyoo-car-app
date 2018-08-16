@@ -67,6 +67,8 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	public static final String STR_STOP = "5";
 	public static final String STR_BZ = "3";
 	public static final String STR_XJ = "1";
+
+    public static final String STR_TIR = "22";
  
 	// Debugging
 	private static final String TAG = "BluetoothChat";
@@ -104,6 +106,8 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	private Button btn_bz;
 	private Button btn_sz;
 	private Button btn_con;
+
+	private Button btn_tir;
 	
 	private boolean CON_FLAG=false;
 	private volatile  String   CON=null;	  
@@ -142,8 +146,9 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		
 		btn_bz= (Button)findViewById(R.id.b_bz);
 		btn_bz.setOnClickListener(this);
-		 
-		
+
+        btn_tir= (Button)findViewById(R.id.b_tir);
+        btn_tir.setOnTouchListener(this);
 
 		btn_stop= (Button)findViewById(R.id.but_stop);
 		btn_stop.setOnClickListener(this);
@@ -196,6 +201,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 //	    thread = new startCon();
 //	    thread.requestStart();
 //	    thread.start();
+
 	}
 	 private void disAble(){
 		 btn_stop.setEnabled(false);
@@ -323,18 +329,18 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				    thread.requestStart();
 				    thread.start();
 				    Able();
-				    title.setText("已经连接");
+				    title.setText("Déjà connecté");
 				    con_text.setText("");
 //					setStatus(getString(R.string.title_connected_to,mConnectedDeviceName));
 					break;
 				case BluetoothChatService.STATE_CONNECTING:
 //					setStatus(R.string.title_connecting);
-					title.setText("正在连接");
+					title.setText("Connexion");
 					break;
 				case BluetoothChatService.STATE_LISTEN:
 				case BluetoothChatService.STATE_NONE:
 //					setStatus(R.string.title_not_connected);
-					title.setText("没有连接");
+					title.setText("Pas de connexion");
 					disAble();
 					break;
 				}
@@ -491,6 +497,20 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
               	mChatService.write(STR_STOP.getBytes());
              }
 			break;
+        case R.id.b_tir:
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                CON=STR_TIR;
+            }
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                CON=null;
+                mChatService.write(STR_TIR.getBytes());
+                mChatService.write(STR_TIR.getBytes());
+                mChatService.write(STR_TIR.getBytes());
+                mChatService.write(STR_TIR.getBytes());
+                mChatService.write(STR_TIR.getBytes());
+                mChatService.write(STR_TIR.getBytes());
+            }
+            break;
 	 
 		default:
 			break;
@@ -549,7 +569,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
                     break;
           	  case R.id.con_text:
           		  con_text.setText("");
-				  Toast.makeText(getApplicationContext(),"清屏", Toast.LENGTH_SHORT).show();
+				  Toast.makeText(getApplicationContext(),"Effacer l'écran", Toast.LENGTH_SHORT).show();
 				    break;
       	  	  default:
     			break;
