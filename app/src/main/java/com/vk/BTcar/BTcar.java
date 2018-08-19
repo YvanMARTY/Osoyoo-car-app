@@ -497,20 +497,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
               	mChatService.write(STR_STOP.getBytes());
              }
 			break;
-        case R.id.b_tir:
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                CON=STR_TIR;
-            }
-            if (event.getAction() == MotionEvent.ACTION_UP) {
-                CON=null;
-                mChatService.write(STR_TIR.getBytes());
-                mChatService.write(STR_TIR.getBytes());
-                mChatService.write(STR_TIR.getBytes());
-                mChatService.write(STR_TIR.getBytes());
-                mChatService.write(STR_TIR.getBytes());
-                mChatService.write(STR_TIR.getBytes());
-            }
-            break;
 	 
 		default:
 			break;
@@ -571,6 +557,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
           		  con_text.setText("");
 				  Toast.makeText(getApplicationContext(),"Effacer l'écran", Toast.LENGTH_SHORT).show();
 				    break;
+			  case R.id.b_tir:
+					  CON=STR_TIR;
+					  mChatService.write(STR_TIR.getBytes());
+				  break;
       	  	  default:
     			break;
 		  }

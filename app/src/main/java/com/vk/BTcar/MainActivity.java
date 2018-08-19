@@ -195,7 +195,7 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 	        	SocketClient(); 
 
 	        }else{
-	        	Toast.makeText(getApplicationContext(),"当前无网络连接", Toast.LENGTH_SHORT).show();
+	        	Toast.makeText(getApplicationContext(),"Aucune connexion réseau actuellement", Toast.LENGTH_SHORT).show();
 	        	finish();
 	        }
 	    }  
@@ -340,9 +340,9 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 				    thread = new startCon();
 				    thread.requestStart();
 				    thread.start(); 
-				    title.setText("已经连接");
+				    title.setText("Déjà connecté");
 	            }else if(str.equals("end")){
-	            	str="设备连接不上，请退出程序！";
+	            	str="L'appareil n'est pas connecté, veuillez quitter le programme!";
 	        		Toast.makeText(getApplicationContext(),str, Toast.LENGTH_SHORT).show();
 	            	disAble();
 	            	 
@@ -357,14 +357,14 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 	        		
 	            	finish();
 	            }else if(str.equals("r")){
-	            	Toast.makeText(getApplicationContext(),"连接成功", Toast.LENGTH_SHORT).show();
+	            	Toast.makeText(getApplicationContext(),"Connexion réussie", Toast.LENGTH_SHORT).show();
 	            }else if(str.equals("3")){
 	            	js++;
 	            	if(js==5){
 	            		js=1;
 	            	}
 	            	String s=repeat(".",js);
-	            	title.setText("正在连接"+s);
+	            	title.setText("Connexion"+s);
 	            }else if(str.equals("msg")){
 	            	str=intent.getStringExtra("CON"); 
 	                
@@ -504,24 +504,24 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 
           	    final EditText et = new EditText(MainActivity.this);  
           	    new AlertDialog.Builder(MainActivity.this)
-          	    .setTitle("修改避障参数")
+          	    .setTitle("Modifier les paramètres d'évitement d'obstacles")
           	    .setView(et)  
-  				.setPositiveButton("确定", new DialogInterface.OnClickListener(){
+  				.setPositiveButton("Déterminer", new DialogInterface.OnClickListener(){
             	    public void onClick(DialogInterface dialog,int whichButton){
             	    	String input = "CMD"+et.getText().toString(); 
             	    	sendMsg(input);
             	    	}
                   })
-          	    .setNegativeButton("取消", null)  
+          	    .setNegativeButton("Annuler", null)
           	    .show();  
                    break;
            	  case R.id.w_con:
-	      			title.setText("正在连接");
+	      			title.setText("Connexion");
 	      			SocketClient(); 
                     break;
           	  case R.id.w_text:
           		  con_text.setText("");
-				  Toast.makeText(getApplicationContext(),"清屏", Toast.LENGTH_SHORT).show();
+				  Toast.makeText(getApplicationContext(),"Effacer l'écran", Toast.LENGTH_SHORT).show();
 				
            		  break;
       	  	  default:
@@ -551,20 +551,20 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 			    thread = new startCon();
 			    thread.requestStart();
 			    thread.start(); 
-			    title.setText("已经连接");
+			    title.setText("Déjà connecté");
 			    con_text.setText("");
 				break;
 			case -1:  
                  
-				String str="设备连接不上，退出程序！";
+				String str="L'appareil n'est pas connecté, quittez le programme!";
 				Toast.makeText(getApplicationContext(),str, Toast.LENGTH_SHORT).show();
 				finish();
 				break;
 			case -2:  
-				title.setText("没有连接");
+				title.setText("Pas de connexion");
 				closeSocket();
 //				SocketClient(); 
-				String str1="连接断开";
+				String str1="Connexion déconnectée";
 				Toast.makeText(getApplicationContext(),str1, Toast.LENGTH_SHORT).show();
 				break;
 			}

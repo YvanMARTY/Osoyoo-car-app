@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg" >
-    
- 
-    
-    <TextView 
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/logo_metyk" />
+
+    <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,28 +32,37 @@
         android:layout_width="wrap_content"
         android:layout_height="1dip" 
         android:layout_centerInParent="true"/>
-        
-             <Button
+
+    <Button
         android:id="@+id/but_wifi"
         android:layout_width="120dip"
-        android:layout_height="60dip" 
-         android:text="Mode Wifi"
-         android:textSize="18sp"
-         android:layout_centerHorizontal="true"
-         android:layout_above="@id/kong"
-                         android:textColor="#ffffff"
-     android:background="@drawable/button_style" 
-                      />   
-        
-               <Button
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="172dp"
+        android:background="@drawable/button_style"
+        android:text="Mode Wifi"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <Button
         android:id="@+id/but_blue"
         android:layout_width="120dip"
-        android:layout_height="60dip" 
-         android:text="Mode Bluetooth"
-         android:textSize="18sp"
-         android:layout_centerHorizontal="true"
-         android:layout_below="@id/kong"
-                         android:textColor="#ffffff"
-     android:background="@drawable/button_style" 
-                        />  
+        android:layout_height="60dip"
+        android:layout_alignBaseline="@+id/kong"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_style"
+        android:text="Mode Bluetooth"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:text="App. modifié par Yvan, Emile et Kavirthan" />
+
 </RelativeLayout>
