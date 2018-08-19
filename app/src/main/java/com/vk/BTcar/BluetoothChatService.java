@@ -239,7 +239,7 @@ public class BluetoothChatService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(BTcar.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(BTcar.TOAST, "无法连接蓝牙设备");
+        bundle.putString(BTcar.TOAST, "Impossible de se connecter au périphérique Bluetooth");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
 
