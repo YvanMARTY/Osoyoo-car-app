@@ -68,7 +68,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	public static final String STR_BZ = "3";
 	public static final String STR_XJ = "1";
 
-    public static final String STR_TIR = "22";
+    public static final String STR_TIR = "7";
  
 	// Debugging
 	private static final String TAG = "BluetoothChat";
@@ -497,6 +497,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
               	mChatService.write(STR_STOP.getBytes());
              }
 			break;
+		case R.id.b_tir:
+				CON=STR_TIR;
+				mChatService.write(STR_TIR.getBytes());
+				break;
 	 
 		default:
 			break;
@@ -557,10 +561,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
           		  con_text.setText("");
 				  Toast.makeText(getApplicationContext(),"Effacer l'écran", Toast.LENGTH_SHORT).show();
 				    break;
-			  case R.id.b_tir:
-					  CON=STR_TIR;
-					  mChatService.write(STR_TIR.getBytes());
-				  break;
       	  	  default:
     			break;
 		  }
