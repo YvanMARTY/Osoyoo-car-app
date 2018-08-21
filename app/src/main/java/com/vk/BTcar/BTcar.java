@@ -21,6 +21,8 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -37,6 +39,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * This is the main Activity that displays the current chat session.
@@ -103,10 +107,14 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	// Boutons activation et désactivation de l'émetteur
 	private Button b_activer_emetteur;
 	private Button b_desactiver_emetteur;
+    private Button etat_emetteur;
+
+    // EditText des logos du robot
+	Editable text;
 
 	private boolean CON_FLAG = false;
 	private volatile  String CON = null;
-	private static int rate=50;
+	private static int rate = 50;
 	private startCon thread;
 	TextView con_text,title;
 	ScrollView scro;
@@ -153,6 +161,13 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		b_desactiver_emetteur.setOnTouchListener(this);
 		b_desactiver_emetteur.setEnabled(false);
 
+		// Récupération de la led indiquant l'état des émetteurs
+        etat_emetteur = (Button)findViewById(R.id.etat_emetteur);
+        etat_emetteur.setOnTouchListener(this);
+        etat_emetteur.setEnabled(false);
+			// MAJ DE LA COULEUR DE LA LED
+        	((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+
 		// Récupération du bouton "TIR"
 		btn_tir = (Button)findViewById(R.id.b_tir);
 		btn_tir.setEnabled(false);
@@ -196,8 +211,16 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 //		 });
 
 		title = (TextView)findViewById(R.id.title);
+		// Texte en noir
+		title.setTextColor(Color.BLACK);
 
 		scro = (ScrollView)findViewById(R.id.scro);
+
+		text = (Editable)con_text.getText();
+		text.append(getCurrentHour() + " : Initialisation du score en cours ...");
+		text.append("\n");
+		con_text.setText(text);
+		scro.fullScroll(ScrollView.FOCUS_DOWN);
 
 //		disAble();
 //		FLAG=true;
@@ -319,8 +342,8 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				case MESSAGE_STATE_CHANGE:
 					switch (msg.arg1) {
 						case BluetoothChatService.STATE_CONNECTED:
-							CON_FLAG=true;
-							CON=null;
+							CON_FLAG = true;
+							CON = null;
 
 							thread = new startCon();
 							thread.requestStart();
@@ -348,7 +371,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 							// MAJ DE L'ETAT DE CONNEXION DU ROBOT
 							ETAT_CONNECTION_APP_ROBOT = 0;
 							btn_xj.setEnabled(false);
-
 							break;
 					}
 					break;
@@ -369,8 +391,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					// construct a string from the valid bytes in the buffer
 					String readMessage = new String(readBuf, 0, msg.arg1);
 
-					Editable text = (Editable)con_text.getText();
-					text.append(readMessage);
+					text.append(getCurrentHour() + " :  " + readMessage);
 					text.append("\n");
 					con_text.setText(text);
 					scro.fullScroll(ScrollView.FOCUS_DOWN);
@@ -450,10 +471,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		switch (v.getId()) {
 			case R.id.but_below:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					CON=STR_BACK;
+					CON = STR_BACK;
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					CON=null;
+					CON = null;
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
@@ -462,10 +483,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				break;
 			case R.id.but_up:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					CON=STR_UP;
+					CON = STR_UP;
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					CON=null;
+					CON = null;
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
@@ -476,10 +497,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				break;
 			case R.id.but_left:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					CON=STR_LEFT;
+					CON = STR_LEFT;
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					CON=null;
+					CON = null;
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
@@ -490,10 +511,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				break;
 			case R.id.but_right:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					CON=STR_RIGHT;
+					CON = STR_RIGHT;
 				}
 				if (event.getAction() == MotionEvent.ACTION_UP) {
-					CON=null;
+					CON = null;
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
 					mChatService.write(STR_STOP.getBytes());
@@ -503,11 +524,11 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				}
 				break;
 			case R.id.b_tir:
-				CON=STR_TIR;
+				CON = STR_TIR;
 				mChatService.write(STR_TIR.getBytes());
 				break;
 			case R.id.b_activer_emetteur:
-				CON=STR_ACTIVER;
+				CON = STR_ACTIVER;
 
 				btn_tir.setEnabled(true);
 				b_desactiver_emetteur.setEnabled(true);
@@ -515,16 +536,22 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 
 				Toast.makeText(BTcar.this, "Emetteur activé", Toast.LENGTH_LONG).show();
 
+				// MAJ DE LA COULEUR DE LA LED
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
+
 				mChatService.write(STR_ACTIVER.getBytes());
 				break;
 			case R.id.b_desactiver_emetteur:
-				CON=STR_DESACTIVER;
+				CON = STR_DESACTIVER;
 
 				btn_tir.setEnabled(false);
 				b_desactiver_emetteur.setEnabled(false);
 				b_activer_emetteur.setEnabled(true);
 
 				Toast.makeText(BTcar.this, "Emetteur désactivé", Toast.LENGTH_LONG).show();
+
+				// MAJ DE LA COULEUR DE LA LED
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
 
 				mChatService.write(STR_DESACTIVER.getBytes());
 				break;
@@ -544,7 +571,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				Toast.makeText(BTcar.this, "MODE COMBAT", Toast.LENGTH_LONG).show();
                 btn_init_score.setEnabled(true);
 
-				CON=STR_XJ;
+				CON = STR_XJ;
 				mChatService.write(STR_XJ.getBytes());
 				// mChatService.write("Vibrate:1;".getBytes());
 //             	 if(CON_FLAG){
@@ -556,7 +583,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 			case R.id.b_bz:
 				Toast.makeText(BTcar.this, "MODE EVITEMENT OBSTACLES", Toast.LENGTH_LONG).show();
 
-				CON=STR_BZ;
+				CON = STR_BZ;
 				mChatService.write(STR_BZ.getBytes());
 
 				// mChatService.write("Preset2;".getBytes());
@@ -567,8 +594,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 //            	 }
 				break;
 			case R.id.but_stop:
-
-				CON=STR_STOP;
+				CON = STR_STOP;
 				mChatService.write(STR_STOP.getBytes());
 
 				// mChatService.write("PowerOff;".getBytes());
@@ -601,10 +627,16 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				break;
 			case R.id.con_text:
 				con_text.setText("");
-				Toast.makeText(getApplicationContext(),"Logs de connexion effacés", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(),"Logs du robot effacés", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.b_init_score:
-				CON=STR_RESET_SCORE;
+
+				text.append(getCurrentHour() + " :  Initialisation du score en cours ...");
+				text.append("\n");
+				con_text.setText(text);
+				scro.fullScroll(ScrollView.FOCUS_DOWN);
+
+				CON = STR_RESET_SCORE;
 				mChatService.write(STR_RESET_SCORE.getBytes());
 				break;
 			default:
@@ -619,7 +651,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	private class startCon extends Thread{
 		public boolean FALG;
 		public void requestExit(){
-			FALG=false;
+			FALG = false;
 
 		}
 		public void requestStart(){
@@ -629,7 +661,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 
 			while(FALG){
 				try{
-					if(CON!=null){
+					if(CON != null){
 						sendToCar(CON);
 
 					}
@@ -645,6 +677,16 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 
 
 		}
+	}
+
+	// Récupère et formate l'heure courante
+	private String getCurrentHour() {
+		Calendar calendar = Calendar.getInstance(Locale.getDefault());
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		int minute = calendar.get(Calendar.MINUTE);
+		int second = calendar.get(Calendar.SECOND);
+
+		return String.valueOf(hour) + "h" + String.valueOf(minute) + " " + String.valueOf(second) + "s";
 	}
 
 }

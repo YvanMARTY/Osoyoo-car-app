@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"> 
-      <string name="app_name">Voiture</string>
-    <string name="action_settings">Settings</string>
-    <string name="loading">loading</string> 
+    <string name="app_name">Voiture</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="loading">Chargement</string>
 	<string name="search">Rechercher</string>
+
     <!--  BluetoothChat -->
     <string name="send">Envoyer</string>
-    <string name="not_connected">Vous n\'êtes pas connecté à un appareil</string>
-    <string name="bt_not_enabled_leaving">Bluetooth n\'est pas activé, quittez l\'application</string>
+    <string name="not_connected">Vous n\'êtes pas connecté</string>
+    <string name="bt_not_enabled_leaving">Bluetooth non activé, veuillez l\'activer</string>
     <string name="title_connecting">Connexion ...</string>
     <string name="title_connected_to">Connecté à<xliff:g id="device_name">%1$s</xliff:g></string>
     <string name="title_not_connected">Pas de connexion</string>
 
     <!--  DeviceListActivity -->
     <string name="scanning">Scan ...</string>
-    <string name="select_device">Sélectionner la connexion de l\'appareil</string>
-    <string name="none_paired">Aucun appairage d\'appareil</string>
+    <string name="select_device">Sélectionnez le robot</string>
+    <string name="none_paired">Aucun robot trouvé</string>
     <string name="none_found">Non trouvé</string>
-    <string name="title_paired_devices">Appareil apparié</string>
-    <string name="title_other_devices">Autres appareils disponibles</string>
+    <string name="title_paired_devices">Robot appairé</string>
+    <string name="title_other_devices">Autres robots disponibles</string>
     <string name="button_scan">Scan</string>
     
 	<!-- colorPanel -->
     <string name="con">Dispositif de connexion</string>
     
     <!-- Options Menu -->
-    <string name="secure_connect">Rechercher et connecter la voiture</string>
+    <string name="secure_connect">Rechercher et connecter le robot</string>
     <string name="discoverable">Peut être recherché par Bluetooth à proximité</string>
     <string name="up">Reculer</string>
     <string name="back">Avancer</string>

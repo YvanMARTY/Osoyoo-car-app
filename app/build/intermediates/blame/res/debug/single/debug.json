@@ -4,12 +4,12 @@
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\stop_down.png"
     },
     {
-        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_loading.xml.flat",
-        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\layout\\activity_loading.xml"
-    },
-    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back_style.xml.flat",
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable\\back_style.xml"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_loading.xml.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\layout\\activity_loading.xml"
     },
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_shang_down.png.flat",
@@ -106,6 +106,10 @@
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_you.png.flat",
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\you.png"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable_led_etat_emetteur.xml.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable\\led_etat_emetteur.xml"
     },
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bg2.png.flat",
