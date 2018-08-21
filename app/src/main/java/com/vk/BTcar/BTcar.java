@@ -529,6 +529,11 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 			case R.id.b_tir:
 				CON = STR_TIR;
 				mChatService.write(STR_TIR.getBytes());
+				mChatService.write(STR_TIR.getBytes());
+				mChatService.write(STR_TIR.getBytes());
+				mChatService.write(STR_TIR.getBytes());
+				mChatService.write(STR_TIR.getBytes());
+				mChatService.write(STR_TIR.getBytes());
 				break;
 			case R.id.b_activer_emetteur:
 				CON = STR_ACTIVER;
