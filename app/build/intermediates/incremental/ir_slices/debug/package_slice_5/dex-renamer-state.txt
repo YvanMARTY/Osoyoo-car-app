@@ -1,4 +1,1 @@
-#Sun Aug 19 20:23:47 CEST 2018
-base.0=D\:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\43
-path.0=classes.dex
-renamed.0=classes.dex
+#Tue Aug 21 09:19:43 CEST 2018
