@@ -2,15 +2,15 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"> 
     <string name="app_name">Voiture</string>
     <string name="action_settings">Paramètres</string>
-    <string name="loading">Chargement</string>
+    <string name="loading">Chargement en cours ...</string>
 	<string name="search">Rechercher</string>
 
     <!--  BluetoothChat -->
     <string name="send">Envoyer</string>
     <string name="not_connected">Vous n\'êtes pas connecté</string>
     <string name="bt_not_enabled_leaving">Bluetooth non activé, veuillez l\'activer</string>
-    <string name="title_connecting">Connexion ...</string>
-    <string name="title_connected_to">Connecté à<xliff:g id="device_name">%1$s</xliff:g></string>
+    <string name="title_connecting">Connexion en cours ...</string>
+    <string name="title_connected_to">Connecté au robot : <xliff:g id="device_name">%1$s</xliff:g></string>
     <string name="title_not_connected">Pas de connexion</string>
 
     <!--  DeviceListActivity -->
@@ -27,7 +27,7 @@
     
     <!-- Options Menu -->
     <string name="secure_connect">Rechercher et connecter le robot</string>
-    <string name="discoverable">Peut être recherché par Bluetooth à proximité</string>
+    <string name="discoverable">Peut être recherché par Bluetooth</string>
     <string name="up">Reculer</string>
     <string name="back">Avancer</string>
     <string name="left">À gauche</string>

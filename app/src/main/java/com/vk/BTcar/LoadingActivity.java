@@ -1,5 +1,4 @@
 package com.vk.BTcar;
- 
 
 import com.example.android.BTcar.R;
 
@@ -19,7 +18,7 @@ public class LoadingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loading);
 		 
-		but_wifi=(Button)findViewById(R.id.but_wifi);  
+		but_wifi = (Button)findViewById(R.id.but_wifi);
 		but_wifi.setOnClickListener(new OnClickListener(){   
               public void onClick(View v) {  
             		 Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
@@ -28,7 +27,7 @@ public class LoadingActivity extends Activity {
           });  
         
         
-		but_blue=(Button)findViewById(R.id.but_blue);  
+		but_blue = (Button)findViewById(R.id.but_blue);
 		but_blue.setOnClickListener(new OnClickListener(){   
               public void onClick(View v) {
             	  Intent intent = new Intent(LoadingActivity.this, BTcar.class);
@@ -40,7 +39,7 @@ public class LoadingActivity extends Activity {
 	}
 	
 	  public boolean onKeyDown(int keyCode, KeyEvent event) {
-	        if(keyCode==KeyEvent.KEYCODE_BACK ) {
+	        if(keyCode == KeyEvent.KEYCODE_BACK ) {
 	        	finish();
 	      		
 				return true;

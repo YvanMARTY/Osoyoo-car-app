@@ -38,7 +38,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -59,6 +58,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	public static final String STR_DESACTIVER = "Y";
 	public static final String STR_RESET_SCORE = "C";
 
+	// Static permettant de savoir l'état de connection Bluetooth avec le robot
 	public static int ETAT_CONNECTION_APP_ROBOT = 0;
 
 	// Debugging
@@ -81,30 +81,30 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	static final int REQUEST_ENABLE_BT = 3;
 
 	// Name of the connected device
-//	private String mConnectedDeviceName = null;
+	//	private String mConnectedDeviceName = null;
 	// Local Bluetooth adapter
 	private BluetoothAdapter mBluetoothAdapter = null;
 	// Member object for the chat services
 	private BluetoothChatService mChatService = null;
 
-	// Boutons de déplacement
+	// Boutons de déplacement du robot
 	private Button btn_up;
 	private Button btn_back;
 	private Button btn_left;
 	private Button btn_right;
 	private Button btn_stop;
 
-	// Boutons du haut de l'écran
+	// Boutons du haut de l'écran de l'application
 	private Button btn_xj;
 	private Button btn_bz;
 	private Button btn_sz;
 	private Button btn_con;
 
-	// Boutons de tir et de réinitialisation du score
+	// Boutons de tir et de réinitialisation du score pour le robot connecté
 	private Button btn_tir;
 	private Button btn_init_score;
 
-	// Boutons activation et désactivation de l'émetteur
+	// Boutons d'activation et de désactivation de l'émetteur placé sur le robot connecté
 	private Button b_activer_emetteur;
 	private Button b_desactiver_emetteur;
     private Button etat_emetteur;
@@ -173,7 +173,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		btn_tir.setEnabled(false);
 		btn_tir.setOnTouchListener(this);
 
-		// Récupération du bouton "INIT SCORE"
+		// Récupération du bouton "Init. score"
 		btn_init_score = (Button)findViewById(R.id.b_init_score);
 		btn_init_score.setOnTouchListener(this);
 		btn_init_score.setEnabled(false);
@@ -217,10 +217,9 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		scro = (ScrollView)findViewById(R.id.scro);
 
 		text = (Editable)con_text.getText();
-		text.append(getCurrentHour() + " : Initialisation du score en cours ...");
-		text.append("\n");
-		con_text.setText(text);
-		scro.fullScroll(ScrollView.FOCUS_DOWN);
+
+		// Effacement de l'historique des logs
+		con_text.setText("");
 
 //		disAble();
 //		FLAG=true;
