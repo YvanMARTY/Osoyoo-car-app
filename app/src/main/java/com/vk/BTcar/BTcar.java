@@ -217,6 +217,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		scro = (ScrollView)findViewById(R.id.scro);
 
 		text = (Editable)con_text.getText();
+		text.append("");
+		text.append("\n");
+		con_text.setText(text);
+		scro.fullScroll(ScrollView.FOCUS_DOWN);
 
 		// Effacement de l'historique des logs
 		con_text.setText("");

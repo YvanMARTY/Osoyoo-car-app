@@ -7,22 +7,22 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.2.0-beta05"
-    timestamp="1534861145918"
+    timestamp="1534861563210"
     token="-4279065716361594259"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="152" />
+        duration="132" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="10" />
+        duration="11" />
     <task
         name="verifier"
-        duration="6" />
+        duration="5" />
 
     <artifact
         location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
@@ -90,7 +90,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1534861145918"
+        timestamp="1534861563210"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
