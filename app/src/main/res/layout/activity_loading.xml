@@ -44,6 +44,7 @@
         android:layout_marginBottom="172dp"
         android:background="@drawable/button_style"
         android:text="Mode Wifi"
+        android:padding="8dp"
         android:textColor="#ffffff"
         android:textSize="18sp" />
 
@@ -55,6 +56,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_style"
         android:text="Mode Bluetooth"
+        android:padding="8dp"
         android:textColor="#ffffff"
         android:textSize="18sp" />
 

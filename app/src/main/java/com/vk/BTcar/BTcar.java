@@ -18,14 +18,18 @@ package com.vk.BTcar;
 import com.example.android.BTcar.R;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -34,6 +38,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,13 +59,18 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	public static final String STR_BZ = "3";
 	public static final String STR_XJ = "1";
 
-	public static final String STR_TIR = "E";
-	public static final String STR_ACTIVER = "K";
-	public static final String STR_DESACTIVER = "Y";
-	public static final String STR_RESET_SCORE = "C";
+	// Statut de connexion ajoutés
+	public static final String STR_TIR = "E"; // comme Emile
+	public static final String STR_ACTIVER = "K"; // comme Kavirthan
+	public static final String STR_DESACTIVER = "Y"; // comme Yvan
+	public static final String STR_RESET_SCORE = "R"; // comme Reset
+	public static final String STR_MATCH_FINI = "F"; // comme Fini ou Fin du match
 
 	// Static permettant de savoir l'état de connection Bluetooth avec le robot
 	public static int ETAT_CONNECTION_APP_ROBOT = 0;
+
+	// Static permettant de savoir si le mode combat est activé
+	public static int MODE_COMBAT_ROBOTS = 0;
 
 	// Debugging
 	private static final String TAG = "BluetoothChat";
@@ -107,20 +118,23 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	// Boutons d'activation et de désactivation de l'émetteur placé sur le robot connecté
 	private Button b_activer_emetteur;
 	private Button b_desactiver_emetteur;
-    private Button etat_emetteur;
+	private Button etat_emetteur;
 
-    // EditText des logos du robot
+	// EditText des logos du robot
 	Editable text;
 
+	// Chronometre pour afficher la durée du match
+	private Chronometer chronometer;
+
 	private boolean CON_FLAG = false;
-	private volatile  String CON = null;
+	private volatile String CON = null;
 	private static int rate = 50;
 	private startCon thread;
 	TextView con_text,title;
 	ScrollView scro;
 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if(keyCode==KeyEvent.KEYCODE_BACK ) {
+		if(keyCode == KeyEvent.KEYCODE_BACK ) {
 			finish();
 
 			return true;
@@ -162,11 +176,11 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		b_desactiver_emetteur.setEnabled(false);
 
 		// Récupération de la led indiquant l'état des émetteurs
-        etat_emetteur = (Button)findViewById(R.id.etat_emetteur);
-        etat_emetteur.setOnTouchListener(this);
-        etat_emetteur.setEnabled(false);
-			// MAJ DE LA COULEUR DE LA LED
-        	((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+		etat_emetteur = (Button)findViewById(R.id.etat_emetteur);
+		etat_emetteur.setOnTouchListener(this);
+		etat_emetteur.setEnabled(false);
+		// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+		((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
 
 		// Récupération du bouton "TIR"
 		btn_tir = (Button)findViewById(R.id.b_tir);
@@ -225,8 +239,121 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		// Effacement de l'historique des logs
 		con_text.setText("");
 
+		chronometer = (Chronometer)findViewById(R.id.chronometre);
+
+		btn_tir.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				b_activer_emetteur.setEnabled(true);
+				b_desactiver_emetteur.setEnabled(false);
+
+				// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
+
+				CON = STR_TIR;
+				mChatService.write(STR_TIR.getBytes());
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						CON = STR_DESACTIVER;
+						
+						b_desactiver_emetteur.setEnabled(false);
+						b_activer_emetteur.setEnabled(true);
+
+						Toast.makeText(BTcar.this, "Emetteur désactivé !", Toast.LENGTH_LONG).show();
+
+						// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+						((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+
+						mChatService.write(STR_DESACTIVER.getBytes());
+					}
+				}, 500);
+			}
+		});
+
+		btn_init_score.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				btn_init_score.setEnabled(true);
+
+				CON = STR_RESET_SCORE;
+				mChatService.write(STR_RESET_SCORE.getBytes());
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						CON = STR_DESACTIVER;
+
+						btn_tir.setEnabled(false);
+						b_desactiver_emetteur.setEnabled(false);
+						b_activer_emetteur.setEnabled(true);
+
+						// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+						((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+
+						mChatService.write(STR_DESACTIVER.getBytes());
+					}
+				}, 500);
+			}
+		});
+
+		b_activer_emetteur.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				b_activer_emetteur.setEnabled(false);
+				b_desactiver_emetteur.setEnabled(true);
+
+				// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
+
+				CON = STR_ACTIVER;
+				mChatService.write(STR_ACTIVER.getBytes());
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						CON = STR_ACTIVER;
+
+						mChatService.write(STR_ACTIVER.getBytes());
+					}
+				}, 500);
+			}
+		});
+
+		b_desactiver_emetteur.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				b_activer_emetteur.setEnabled(true);
+				b_desactiver_emetteur.setEnabled(false);
+
+				// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+
+				CON = STR_DESACTIVER;
+				mChatService.write(STR_DESACTIVER.getBytes());
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						CON = STR_DESACTIVER;
+
+						mChatService.write(STR_DESACTIVER.getBytes());
+					}
+				}, 500);
+			}
+		});
+
 //		disAble();
-//		FLAG=true;
+// 		FLAG=true;
 //	    CON="tin";
 //	    thread = new startCon();
 //	    thread.requestStart();
@@ -244,9 +371,13 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		btn_sz.setEnabled(false);
 
 		btn_con.setEnabled(true);
+
+		b_activer_emetteur.setEnabled(false);
+		b_desactiver_emetteur.setEnabled(false);
+		btn_tir.setEnabled(false);
 	}
 
-	private void Able(){
+	private void Able() {
 		btn_stop.setEnabled(true);
 		btn_up.setEnabled(true);
 		btn_back.setEnabled(true);
@@ -257,6 +388,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		btn_xj.setEnabled(true);
 		btn_sz.setEnabled(true);
 		btn_con.setEnabled(false);
+
+		b_activer_emetteur.setEnabled(true);
+		b_desactiver_emetteur.setEnabled(true);
+		btn_tir.setEnabled(true);
 	}
 
 	private void getBTadapter() {
@@ -444,7 +579,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		// Attempt to connect to the device
 		mChatService.connect(device, secure);
 	}
-//
+
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {
 //		MenuInflater inflater = getMenuInflater();
@@ -526,45 +661,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_STOP.getBytes());
 				}
 				break;
-			case R.id.b_tir:
-				CON = STR_TIR;
-				mChatService.write(STR_TIR.getBytes());
-				mChatService.write(STR_TIR.getBytes());
-				mChatService.write(STR_TIR.getBytes());
-				mChatService.write(STR_TIR.getBytes());
-				mChatService.write(STR_TIR.getBytes());
-				mChatService.write(STR_TIR.getBytes());
-				break;
-			case R.id.b_activer_emetteur:
-				CON = STR_ACTIVER;
-
-				btn_tir.setEnabled(true);
-				b_desactiver_emetteur.setEnabled(true);
-				b_activer_emetteur.setEnabled(false);
-
-				Toast.makeText(BTcar.this, "Emetteur activé", Toast.LENGTH_LONG).show();
-
-				// MAJ DE LA COULEUR DE LA LED
-				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
-
-				mChatService.write(STR_ACTIVER.getBytes());
-				break;
-			case R.id.b_desactiver_emetteur:
-				CON = STR_DESACTIVER;
-
-				btn_tir.setEnabled(false);
-				b_desactiver_emetteur.setEnabled(false);
-				b_activer_emetteur.setEnabled(true);
-
-				Toast.makeText(BTcar.this, "Emetteur désactivé", Toast.LENGTH_LONG).show();
-
-				// MAJ DE LA COULEUR DE LA LED
-				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
-
-				mChatService.write(STR_DESACTIVER.getBytes());
-				break;
-
-
 			default:
 				break;
 		}
@@ -576,36 +672,55 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		// TODO Auto-generated method stub
 		switch(v.getId()){
 			case R.id.b_xj:
-				Toast.makeText(BTcar.this, "MODE COMBAT", Toast.LENGTH_LONG).show();
-                btn_init_score.setEnabled(true);
+				Toast.makeText(BTcar.this, "Mode combat activé !", Toast.LENGTH_LONG).show();
+				btn_init_score.setEnabled(true);
+				btn_tir.setEnabled(true);
 
-				CON = STR_XJ;
-				mChatService.write(STR_XJ.getBytes());
-				// mChatService.write("Vibrate:1;".getBytes());
-//             	 if(CON_FLAG){
-//             		 mChatService.write(STR_XJ.getBytes());
-//                	 mChatService.write(STR_XJ.getBytes());
-////                	 con_text.setText("");
-//            	 }
+				b_activer_emetteur.setEnabled(false);
+				b_desactiver_emetteur.setEnabled(false);
+
+				// THREAD qui gère le temps du chronomètre qui correspond au temps du match entre les deux robots
+				startTimer_match_chrono();
+
+				// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					public void run() {
+						// Démarrage du chronomètre
+						chronometer.start();
+						reset_chronometre_tps_match();
+					}
+				}, 3000);
+
+				ETAT_CONNECTION_APP_ROBOT = 1;
+
+				/* CON = STR_XJ;
+				mChatService.write(STR_XJ.getBytes()); */
+
+				if(CON_FLAG){
+					mChatService.write(STR_XJ.getBytes());
+					mChatService.write(STR_XJ.getBytes());
+					con_text.setText("");
+				}
 				break;
 			case R.id.b_bz:
 				Toast.makeText(BTcar.this, "MODE EVITEMENT OBSTACLES", Toast.LENGTH_LONG).show();
 
-				CON = STR_BZ;
-				mChatService.write(STR_BZ.getBytes());
+				/* CON = STR_BZ;
+				mChatService.write(STR_BZ.getBytes()); */
 
-				// mChatService.write("Preset2;".getBytes());
-//             	 if(CON_FLAG){
-////             		   con_text.setText("");
-//             		 mChatService.write(STR_BZ.getBytes());
-//                	 mChatService.write(STR_BZ.getBytes());
-//            	 }
+				if(CON_FLAG){
+					con_text.setText("");
+					mChatService.write(STR_BZ.getBytes());
+					mChatService.write(STR_BZ.getBytes());
+				}
 				break;
 			case R.id.but_stop:
 				CON = STR_STOP;
 				mChatService.write(STR_STOP.getBytes());
 
-				// mChatService.write("PowerOff;".getBytes());
 //              	 if(CON_FLAG){
 //              	   con_text.setText("");
 //              	    mChatService.write(STR_STOP.getBytes());
@@ -617,28 +732,24 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
 				break;
 			case R.id.b_sz:
-				mChatService.write("Vibrate:20;".getBytes());
-//        	    final EditText et = new EditText(BTcar.this);  
-//        	    new AlertDialog.Builder(BTcar.this)
-//        	    .setTitle("修改避障参数")
-//        	    .setView(et)  
-//				.setPositiveButton("确定", new DialogInterface.OnClickListener(){
-//          	    public void onClick(DialogInterface dialog,int whichButton){
-//          	    	String input = "CMD"+et.getText().toString(); 
-//          	    	mChatService.write(input.getBytes());
-//          	    	}
-//                })
-//        	    .setNegativeButton("取消", null)  
-//        	    .show();  
-//        
-//       
+				final EditText et = new EditText(BTcar.this);
+				new AlertDialog.Builder(BTcar.this)
+						.setTitle("Modifier les paramètres d'évitement d'obstacles")
+						.setView(et)
+						.setPositiveButton("Enregistrer", new DialogInterface.OnClickListener(){
+							public void onClick(DialogInterface dialog,int whichButton){
+								String input = "CMD"+et.getText().toString();
+								mChatService.write(input.getBytes());
+							}
+						})
+						.setNegativeButton("Annuler", null)
+						.show();
 				break;
 			case R.id.con_text:
 				con_text.setText("");
 				Toast.makeText(getApplicationContext(),"Logs du robot effacés", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.b_init_score:
-
 				text.append(getCurrentHour() + " :  Initialisation du score en cours ...");
 				text.append("\n");
 				con_text.setText(text);
@@ -697,4 +808,35 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		return String.valueOf(hour) + "h" + String.valueOf(minute) + " " + String.valueOf(second) + "s";
 	}
 
+	// Réinitialiser le chronomètre de la partie à zéro
+	private void reset_chronometre_tps_match() {
+		chronometer.setBase(SystemClock.elapsedRealtime());
+		chronometer.start();
+	}
+
+	// THREAD qui vérifie si le match entre les deux robots de 3 minutes est terminée
+	private void startTimer_match_chrono() {
+		CountDownTimer counter = new CountDownTimer(180000, 1000) {
+			public void onTick(long millisUntilDone) {
+
+			}
+			public void onFinish() {
+				CON = STR_MATCH_FINI;
+				mChatService.write(STR_MATCH_FINI.getBytes());
+
+				chronometer.stop();
+
+				// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
+				((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
+
+				Handler handler = new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						disAble();
+					}
+				}, 500);
+			}
+		}.start();
+	}
 }

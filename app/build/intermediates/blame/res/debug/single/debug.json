@@ -112,6 +112,10 @@
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable\\led_etat_emetteur.xml"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_chronometer.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\chronometer.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_bg2.png.flat",
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\bg2.png"
     },

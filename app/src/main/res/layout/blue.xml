@@ -237,7 +237,8 @@
         android:layout_below="@+id/b_tir"
         android:layout_alignParentLeft="true"
         android:background="@drawable/button_style"
-        android:text="Init. score"
+		android:padding="12dp"
+        android:text="INIT. SCORE"
         android:textColor="@android:color/white" />
 
     <Button
@@ -250,5 +251,23 @@
         android:layout_marginTop="-26dp"
         android:background="@drawable/led_etat_emetteur"
         android:textColor="@android:color/white" />
+
+	<Chronometer
+		android:id="@+id/chronometre"
+		android:layout_width="51dp"
+		android:layout_height="22dp"
+		android:layout_alignParentBottom="true"
+		android:layout_alignStart="@+id/LinearLayout03"
+		android:layout_marginBottom="24dp"
+		android:textColor="@android:color/black"
+		android:textSize="18dp" />
+
+	<ImageView
+		android:id="@+id/imageView3"
+		android:layout_width="44dp"
+		android:layout_height="38dp"
+		android:layout_alignBottom="@+id/but_below"
+		android:layout_alignParentStart="true"
+		android:src="@drawable/chronometer" />
 
 </RelativeLayout>
