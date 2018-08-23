@@ -392,21 +392,21 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 			case R.id.w_xj:
 				if(CON_FLAG) {
 					sendMsg(STR_XJ);
-					sendMsg(STR_XJ);
+					// sendMsg(STR_XJ);
 //             	    con_text.setText("");
 				}
 				break;
 			case R.id.w_bz:
 				if(CON_FLAG) {
 					sendMsg(STR_BZ);
-					sendMsg(STR_BZ);
+					// sendMsg(STR_BZ);
 //             	    con_text.setText("");
 				}
 				break;
 			case R.id.but_stop:
 				if(CON_FLAG) {
 					sendMsg(STR_STOP);
-					sendMsg(STR_STOP);
+					// sendMsg(STR_STOP);
 					// con_text.setText("");
 				}
 				break;

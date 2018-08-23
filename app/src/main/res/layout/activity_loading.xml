@@ -20,12 +20,12 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shenzhen Sibo Zhilian Technology Co., Ltd"
-        android:textSize="14sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dip"
+        android:text="Based on Osoyoo official app"
         android:textColor="@android:color/black"
-        android:layout_marginBottom="20dip"/>
+        android:textSize="15sp" />
     
      
 
@@ -67,7 +67,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="59dp"
+        android:text="Developed by Yvan, Emile et Kavirthan"
         android:textColor="@android:color/black"
-        android:text="App. modifié par Yvan, Emile et Kavirthan" />
+        android:textSize="18dp" />
 
 </RelativeLayout>

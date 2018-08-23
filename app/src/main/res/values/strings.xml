@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"> 
-    <string name="app_name">Voiture</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Metyk</string>
     <string name="action_settings">Paramètres</string>
     <string name="loading">Chargement en cours ...</string>
-	<string name="search">Rechercher</string>
+    <string name="search">Rechercher</string>
 
     <!--  BluetoothChat -->
     <string name="send">Envoyer</string>
@@ -21,10 +21,10 @@
     <string name="title_paired_devices">Robot appairé</string>
     <string name="title_other_devices">Autres robots disponibles</string>
     <string name="button_scan">Scan</string>
-    
-	<!-- colorPanel -->
+
+    <!-- colorPanel -->
     <string name="con">Dispositif de connexion</string>
-    
+
     <!-- Options Menu -->
     <string name="secure_connect">Rechercher et connecter le robot</string>
     <string name="discoverable">Peut être recherché par Bluetooth</string>
@@ -32,4 +32,8 @@
     <string name="back">Avancer</string>
     <string name="left">À gauche</string>
     <string name="right">À droite</string>
+
+    <string name="title_activity_splashscreen">Splashscreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

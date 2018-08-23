@@ -39,7 +39,8 @@
             android:background="@drawable/button_style"
             android:text="Modifier les paramètres"
             android:textColor="#ffffff"
-            android:textSize="15sp"></Button>
+            android:textSize="15sp"
+			android:padding="8dp" />
     </LinearLayout>
 
     <LinearLayout android:id="@+id/LinearLayout01"
@@ -241,16 +242,16 @@
         android:text="INIT. SCORE"
         android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/etat_emetteur"
-        android:layout_width="19dp"
-        android:layout_height="20dp"
-        android:layout_below="@+id/b_tir"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="244dp"
-        android:layout_marginTop="-26dp"
-        android:background="@drawable/led_etat_emetteur"
-        android:textColor="@android:color/white" />
+	<Button
+		android:id="@+id/etat_emetteur"
+		android:layout_width="19dp"
+		android:layout_height="20dp"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@+id/b_tir"
+		android:layout_marginLeft="244dp"
+		android:layout_marginTop="-26dp"
+		android:background="@drawable/led_etat_emetteur"
+		android:textColor="@android:color/white" />
 
 	<Chronometer
 		android:id="@+id/chronometre"
@@ -269,5 +270,16 @@
 		android:layout_alignBottom="@+id/but_below"
 		android:layout_alignParentStart="true"
 		android:src="@drawable/chronometer" />
+
+	<TextView
+		android:id="@+id/emetteurs_etat"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignTop="@+id/b_activer_emetteur"
+		android:layout_marginEnd="96dp"
+		android:text="Emetteurs"
+		android:textColor="@android:color/black"
+		android:textStyle="bold" />
 
 </RelativeLayout>
