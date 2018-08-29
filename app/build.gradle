@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.BTcar"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 24
     }
 
     buildTypes {

@@ -6,15 +6,14 @@
     android:background="@android:color/white" >
     <!-- android:background="@drawable/bg" -->
 
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="242dp"
+        android:layout_height="205dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:src="@drawable/logo_metyk" />
+        android:layout_marginTop="25dp"
+        android:src="@drawable/web_hi_res_512" />
 
     <TextView
         android:id="@+id/name"
@@ -26,8 +25,6 @@
         android:text="Based on Osoyoo official app"
         android:textColor="@android:color/black"
         android:textSize="15sp" />
-    
-     
 
         <TextView 
         android:id="@+id/kong"
@@ -67,7 +64,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="59dp"
-        android:text="Developed by Yvan, Emile et Kavirthan"
+        android:gravity="center"
+        android:text="Developed by Yvan\nTested by Emile\nApproved by Kavirthan"
         android:textColor="@android:color/black"
         android:textSize="18dp" />
 

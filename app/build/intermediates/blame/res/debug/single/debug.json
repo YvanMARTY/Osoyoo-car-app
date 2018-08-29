@@ -468,10 +468,6 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\55ac9ade15c2c921e044bf5b4d00b3d7\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_splash.png.flat",
-        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\splash.png"
-    },
-    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_tab_indicator_material.xml.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable\\abc_tab_indicator_material.xml"
     },
@@ -628,6 +624,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-hdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_web_hi_res_512.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\web_hi_res_512.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
@@ -744,6 +744,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\color-v23\\abc_tint_default.xml"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_stop.png.flat",
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\stop.png"
     },
@@ -770,6 +774,10 @@
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_logolimayrac.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\logolimayrac.png"
     },
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\anim_tooltip_enter.xml.flat",
@@ -1096,6 +1104,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5730a7f893606719c9320c595ca05311\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_logo_osoyoo.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\logo_osoyoo.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
@@ -1384,6 +1396,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\layout\\abc_alert_dialog_material.xml"
     },
@@ -1560,6 +1576,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5730a7f893606719c9320c595ca05311\\res\\layout-v21\\notification_action.xml"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5730a7f893606719c9320c595ca05311\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
@@ -1600,8 +1620,20 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_limayrac.jpg.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\limayrac.jpg"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\5730a7f893606719c9320c595ca05311\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -1632,6 +1664,10 @@
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_robot.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\robot.png"
+    },
+    {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_zuo_down.png.flat",
         "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-hdpi\\zuo_down.png"
     },
@@ -1642,6 +1678,10 @@
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_splash.png.flat",
+        "source": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\src\\main\\res\\drawable-xxhdpi\\splash.png"
     },
     {
         "merged": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",

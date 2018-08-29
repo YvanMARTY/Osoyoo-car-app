@@ -622,7 +622,10 @@ drawable chronometer
 drawable ic_launcher
 drawable led_etat_emetteur
 drawable left_style
+drawable limayrac
 drawable logo_metyk
+drawable logo_osoyoo
+drawable logolimayrac
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -636,6 +639,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable right_style
+drawable robot
 drawable shang
 drawable shang_down
 drawable splash
@@ -645,6 +649,7 @@ drawable stop_style
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable up_style
+drawable web_hi_res_512
 drawable xia
 drawable xia_down
 drawable you
@@ -740,6 +745,7 @@ id image
 id imageView
 id imageView2
 id imageView3
+id imageView4
 id info
 id invisible
 id italic
@@ -896,6 +902,7 @@ layout wifi
 menu main
 menu option_menu
 menu option_menu1
+mipmap ic_launcher
 string abc_action_bar_home_description
 string abc_action_bar_home_description_format
 string abc_action_bar_home_subtitle_description_format

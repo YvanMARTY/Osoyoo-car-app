@@ -83,7 +83,7 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\yvanm\.gradle\caches
 	android:label
 		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:16:9-41
 	android:icon
-		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:15:9-44
+		ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:15:9-48
 activity#com.vk.BTcar.LoadingActivity
 ADDED from D:\yvanm\Desktop\CPI 1\PROJET D'ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\src\main\AndroidManifest.xml:17:9-23:20
 	android:screenOrientation

@@ -20,6 +20,7 @@ public class Splashcreen extends Activity {
                     public void run() {
                         Intent intent = new Intent(getBaseContext(), LoadingActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 },
                 5000);

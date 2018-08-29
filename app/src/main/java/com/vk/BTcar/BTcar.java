@@ -137,9 +137,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	TextView con_text,title;
 	ScrollView scro;
 
-	Context context;
-
-	CountDownTimer counter;
+	CountDownTimer chrono_thread;
 
 	String readMessage;
 
@@ -239,12 +237,12 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		// Effacement de l'historique des logs
 		con_text.setText("");
 
-		context = this;
-
 		chronometer = (Chronometer)findViewById(R.id.chronometre);
 
 		Able();
 	}
+
+	// FONCTION qui désactive les boutons de l'application du robot
 	private void disAble(){
 		btn_stop.setEnabled(false);
 		btn_up.setEnabled(false);
@@ -264,6 +262,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		btn_init_score.setEnabled(false);
 	}
 
+	// FONCTION qui active les boutons de l'application du robot
 	private void Able() {
 		btn_stop.setEnabled(true);
 		btn_up.setEnabled(true);
@@ -282,6 +281,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		btn_init_score.setEnabled(true);
 	}
 
+	// FONCTION qui gère l'adapter pour accèer à la gestion du Bluetooth du smartphone
 	private void getBTadapter() {
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -427,7 +427,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 						reset_chronometre_tps_match();
 						chronometer.stop();
 
-						counter.cancel();
+						chrono_thread.cancel();
 
 						Handler handler = new Handler();
 						handler.postDelayed(new Runnable() {
@@ -474,8 +474,9 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		}
 	};
 
+	// FONCTION qui génère l'alertdialog de fin de match
 	private void alertdialog_builder() {
-		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context, R.style.MyAlertDialogStyle);
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(BTcar.this, R.style.MyAlertDialogStyle);
 		alertDialogBuilder.setTitle("");
 
 		alertDialogBuilder
@@ -518,6 +519,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		}
 	}
 
+	// FONCTION qui permet de connecter le smartphone au robot en Bluetooth
 	private void connectDevice(Intent data, boolean secure) {
 		// Get the device MAC address
 		String address = data.getExtras().getString(
@@ -531,6 +533,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		switch (v.getId()) {
+			// BOUTON qui permet de faire reculer le robot
 			case R.id.but_below:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					CON = STR_BACK;
@@ -543,6 +546,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_STOP.getBytes());
 				}
 				break;
+				// BOUTON qui fait avancer le robot
 			case R.id.but_up:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					CON = STR_UP;
@@ -557,6 +561,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_STOP.getBytes());
 				}
 				break;
+				// BOUTON qui fait tourner à gauche le robot
 			case R.id.but_left:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					CON = STR_LEFT;
@@ -571,6 +576,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_STOP.getBytes());
 				}
 				break;
+				// BOUTON qui fait tourner à droite le robot
 			case R.id.but_right:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					CON = STR_RIGHT;
@@ -585,6 +591,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_STOP.getBytes());
 				}
 				break;
+				// BOUTON du bouton TIR
 			case R.id.b_tir:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					/* b_activer_emetteur.setEnabled(false);
@@ -605,6 +612,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_TIR.getBytes());
 				}
 				break;
+				// BOUTON d'initialisation du score
 			case R.id.b_init_score:
 				if(STR_MODE_COMBAT == 1) {
 					if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -627,6 +635,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					Toast.makeText(this, "Veuillez activer le mode combat !", Toast.LENGTH_SHORT).show();
 				}
 				break;
+				// BOUTON pour activer l'émetteur
 			case R.id.b_activer_emetteur:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					/* b_activer_emetteur.setEnabled(false);
@@ -647,6 +656,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_ACTIVER.getBytes());
 				}
 				break;
+				// BOUTON qui désactive l'émetteur
 			case R.id.b_desactiver_emetteur:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					/* b_activer_emetteur.setEnabled(true);
@@ -667,6 +677,22 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					mChatService.write(STR_DESACTIVER.getBytes());
 				}
 				break;
+			case R.id.but_stop:
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					Log.d("LOG", "STOP");
+
+					CON = STR_STOP;
+				}
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+					CON = null;
+					mChatService.write(STR_STOP.getBytes());
+					mChatService.write(STR_STOP.getBytes());
+					mChatService.write(STR_STOP.getBytes());
+					mChatService.write(STR_STOP.getBytes());
+					mChatService.write(STR_STOP.getBytes());
+					mChatService.write(STR_STOP.getBytes());
+				}
+				break;
 			default:
 				break;
 		}
@@ -677,6 +703,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()) {
+			// BOUTON pour activer le mode combat
 			case R.id.b_xj:
 				if(STR_MODE_COMBAT == 0) {
 					Toast.makeText(BTcar.this, "Mode combat activé !", Toast.LENGTH_LONG).show();
@@ -717,21 +744,24 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 					Toast.makeText(this, "Robot déjà en mode combat !", Toast.LENGTH_SHORT).show();
 				}
 				break;
+				// BOUTON pour activer le mode d'évitement d'obstable
 			case R.id.b_bz:
-				if(STR_MODE_COMBAT == 0) {
-					Toast.makeText(BTcar.this, "Mode évitement d'obstacles activé !", Toast.LENGTH_LONG).show();
+				Log.d("LOG", "MODE OBSTACLES");
 
-					if (CON_FLAG) {
-						con_text.setText("");
-						mChatService.write(STR_BZ.getBytes());
-						mChatService.write(STR_BZ.getBytes());
-					}
+				Toast.makeText(BTcar.this, "Mode évitement d'obstacles activé !", Toast.LENGTH_LONG).show();
+
+				if (CON_FLAG) {
+					con_text.setText("");
+					mChatService.write(STR_BZ.getBytes());
+					mChatService.write(STR_BZ.getBytes());
 				}
 				break;
-			case R.id.but_stop:
+			/* case R.id.but_stop:
+				Log.d("LOG", "STOP");
+
 				CON = STR_STOP;
 				mChatService.write(STR_STOP.getBytes());
-				break;
+				break; */
 			case R.id.b_con:
 				Intent serverIntent = new Intent(this, DeviceListActivity.class);
 				startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
@@ -754,7 +784,15 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 				con_text.setText("");
 				Toast.makeText(getApplicationContext(),"Logs du robot effacés", Toast.LENGTH_SHORT).show();
 				break;
+				// BOUTON pour initialiser les scores
 			case R.id.b_init_score:
+
+				chrono_thread.cancel();
+				chronometer.stop();
+				reset_chronometre_tps_match();
+				chronometer.start();
+				chrono_thread.start();
+
 				text.append(getCurrentHour() + " :  Initialisation du score en cours ...");
 				text.append("\n");
 				con_text.setText(text);
@@ -767,6 +805,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		}
 	}
 
+	// FONCTION qui envoie les informations au robot
 	private void sendToCar(String data) {
 		mChatService.write(data.getBytes());
 	}
@@ -800,7 +839,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		}
 	}
 
-	// Récupère et formate l'heure courante
+	// FONCTION qui récupère et formate l'heure courante
 	private String getCurrentHour() {
 		Calendar calendar = Calendar.getInstance(Locale.getDefault());
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -810,7 +849,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 		return String.valueOf(hour) + "h" + String.valueOf(minute) + " " + String.valueOf(second) + "s";
 	}
 
-	// Réinitialiser le chronomètre de la partie à zéro
+	// FONCTION qui réinitialiser le chronomètre de la partie à zéro
 	private void reset_chronometre_tps_match() {
 		chronometer.setBase(SystemClock.elapsedRealtime());
 		chronometer.start();
@@ -819,7 +858,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener{
 	// THREAD qui vérifie si le match entre les deux robots de 3 minutes est terminée
 	private void startTimer_match_chrono() {
 
-		counter = new CountDownTimer(22000, 1000) {
+		chrono_thread = new CountDownTimer(22000, 1000) {
 			@Override
 			public void onTick(long millisUntilFinished) {
 			}
