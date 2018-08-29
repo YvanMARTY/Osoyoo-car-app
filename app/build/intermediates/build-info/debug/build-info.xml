@@ -2,65 +2,30 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="27"
-    build-mode="FULL"
+    build-mode="COLD"
     density="xhdpi"
     format="10"
+    ir-eligibility="CLASS_ADDED"
     plugin-version="3.2.0-beta05"
-    timestamp="1535559421226"
+    timestamp="1535560853618"
     token="-4279065716361594259"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="873" />
+        duration="615" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="44" />
+        duration="21" />
     <task
         name="verifier"
-        duration="96" />
+        duration="25" />
 
     <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-        type="SPLIT" />
-    <artifact
         location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
 
     <build
@@ -105,6 +70,15 @@
             type="SPLIT" />
         <artifact
             location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1535560853618"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\yvanm\Desktop\CPI 1\PROJET D&apos;ETUDE\PROJET D_ETUDE\Osoyoo-car-app\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
     </build>
 
