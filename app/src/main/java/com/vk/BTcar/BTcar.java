@@ -292,6 +292,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 
 	}
 
+	// FONCTION qui gère la connexion lors de la création de l'acitivité
 	@Override
 	public void onStart() {
 		super.onStart();
@@ -308,6 +309,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		}
 	}
 
+	// FONCTION qui gère la connexion lorsque l'activité est relancée
 	@Override
 	public synchronized void onResume() {
 		super.onResume();
@@ -326,12 +328,14 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		}
 	}
 
+	// FONCTION qui gère la connexion pour la recupération des messages Bluetooth
 	private void setupChat() {
 		Log.d(TAG, "setupChat()");
 		// Initialize the BluetoothChatService to perform bluetooth connections
 		mChatService = new BluetoothChatService(this, mHandler);
 	}
 
+	// FONCTION qui gère la connexion lorsque l'activité est détruite
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
@@ -345,6 +349,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		CON_FLAG=false;
 	}
 
+	// FONCTION qui vérifie que le Bluetooth est bien en mode "Détectable"
 	public void ensureDiscoverable() {
 		if (D)
 			Log.d(TAG, "ensure discoverable");
@@ -380,8 +385,11 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		alertDialogBuilder.create().show();
 	}
 
+	// FONCTION qui récupère les données depuis une autre activité
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (D) Log.d(TAG, "onActivityResult " + resultCode);
+		if (D) {
+			Log.d(TAG, "onActivityResult " + resultCode);
+		}
 
 		switch (requestCode) {
 			case REQUEST_CONNECT_DEVICE_SECURE:
@@ -418,6 +426,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		mChatService.connect(device, secure);
 	}
 
+	// FONCTION qui gère les boutons lors du TOUCH DOWN and UP
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		switch (v.getId()) {
@@ -482,8 +491,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 			// BOUTON du bouton TIR
 			case R.id.b_tir:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					/* b_activer_emetteur.setEnabled(false);
-					b_desactiver_emetteur.setEnabled(true); */
 
 					// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
 					((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
@@ -526,8 +533,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 			// BOUTON pour activer l'émetteur
 			case R.id.b_activer_emetteur:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					/* b_activer_emetteur.setEnabled(false);
-					b_desactiver_emetteur.setEnabled(true); */
 
 					// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
 					((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.GREEN);
@@ -547,8 +552,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 			// BOUTON qui désactive l'émetteur
 			case R.id.b_desactiver_emetteur:
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					/* b_activer_emetteur.setEnabled(true);
-					b_desactiver_emetteur.setEnabled(false); */
 
 					// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
 					((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
@@ -585,6 +588,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		return false;
 	}
 
+	// FONCTION qui gère les boutons lors du CLICK
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
@@ -640,16 +644,19 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 					mChatService.write(STR_BZ.getBytes());
 				}
 				break;
+			// BOUTON pour stopper le robot
 			case R.id.but_stop:
 				Log.d("LOG", "STOP");
 
 				CON = STR_STOP;
 				mChatService.write(STR_STOP.getBytes());
 				break;
+			// BOUTON pour se connecter au robot (Bluetooth et robot)
 			case R.id.b_con:
 				Intent serverIntent = new Intent(this, DeviceListActivity.class);
 				startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
 				break;
+			// BOUTON pour modifier la distance de détection des obstacles
 			case R.id.b_sz:
 				final EditText et = new EditText(BTcar.this);
 				new AlertDialog.Builder(BTcar.this, R.style.MyAlertDialogStyle)
@@ -664,6 +671,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 						.setNegativeButton("Annuler", null)
 						.show();
 				break;
+			// ACTION : Lors d'un touch dans l'Edittext, la console de logs est éffacés
 			case R.id.con_text:
 				con_text.setText("");
 				Toast.makeText(getApplicationContext(),R.string.logs_effaces, Toast.LENGTH_SHORT).show();
@@ -688,12 +696,12 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		}
 	}
 
-	// FONCTION qui envoie les informations au robot
+	// FONCTION qui envoie les demandes d'éxecution d'action au robot
 	private void sendToCar(String data) {
 		mChatService.write(data.getBytes());
 	}
 
-	// FONCTION qui récupère et formate l'heure courante
+	// FONCTION qui récupère et formate l'heure courante pour la concaténer au message, puis pour l'afficher dans la console
 	private String getCurrentHour() {
 		Calendar calendar = Calendar.getInstance(Locale.getDefault());
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -719,8 +727,8 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 	}
 
 	private void fin_match() {
-		/* CON = STR_MATCH_FINI;
-		mChatService.write(STR_MATCH_FINI.getBytes()); */
+		CON = STR_MATCH_FINI;
+		mChatService.write(STR_MATCH_FINI.getBytes());
 
 		chronometer.stop();
 
@@ -728,6 +736,9 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		handler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
+				CON = STR_ARRET_CMD;
+				mChatService.write(STR_ARRET_CMD.getBytes());
+
 				disAble();
 
 				STR_MODE_COMBAT = 0;
@@ -739,8 +750,8 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-						b_desactiver_emetteur.setEnabled(false);
-						b_activer_emetteur.setEnabled(true);
+								/* b_desactiver_emetteur.setEnabled(false);
+								b_activer_emetteur.setEnabled(true); */
 
 						// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
 						((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
@@ -751,59 +762,24 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 				}, 100);
 			}
 		}, 1000);
+
+		chrono_countdowntimer.cancel();
 	}
 
-	// THREAD qui vérifie si le match entre les deux robots de 3 minutes est terminée
+	// COUNTDOWN_TIMER qui vérifie si le match entre les deux robots de 3 minutes est terminée
 	private void startTimer_match_chrono() {
-
-		/* 120000 */
-
-		chrono_countdowntimer = new CountDownTimer(12000, 1000) {
+		chrono_countdowntimer = new CountDownTimer(120000, 1000) {
 			@Override
 			public void onTick(long millisUntilFinished) {
 			}
 			@Override
 			public void onFinish() {
-				CON = STR_MATCH_FINI;
-				mChatService.write(STR_MATCH_FINI.getBytes());
-
-				chronometer.stop();
-
-				Handler handler = new Handler();
-				handler.postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						CON = STR_ARRET_CMD;
-						mChatService.write(STR_ARRET_CMD.getBytes());
-
-						disAble();
-
-						STR_MODE_COMBAT = 0;
-						btn_bz.setEnabled(true);
-
-						alertdialog_builder("fin_temps");
-
-						Handler handler = new Handler();
-						handler.postDelayed(new Runnable() {
-							@Override
-							public void run() {
-								/* b_desactiver_emetteur.setEnabled(false);
-								b_activer_emetteur.setEnabled(true); */
-
-								// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
-								((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
-
-								reset_chronometre_tps_match();
-								chronometer.stop();
-							}
-						}, 100);
-					}
-				}, 1000);
-
-				cancel();
+				fin_match();
 			}
 		};
 	}
+
+	// ACTION : Lors de l'appuie sur le bouton "RETOUR" de la navbar, l'activité est tuée
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode == KeyEvent.KEYCODE_BACK ) {
 			finish();
@@ -813,24 +789,25 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		return super.onKeyDown(keyCode, event);
 	}
 
+	// THREAD qui démarre la connexion au robot
 	private class startCon extends Thread {
 		public boolean FALG;
-		public void requestExit(){
+		public void requestExit() {
 			FALG = false;
 
 		}
-		public void requestStart(){
+		public void requestStart() {
 			FALG = true;
 		}
 		public void run() {
 
-			while(FALG){
-				try{
-					if(CON != null){
+			while(FALG) {
+				try {
+					if(CON != null) {
 						sendToCar(CON);
 
 					}
-				}catch(Exception ex){
+				} catch(Exception ex) {
 				}
 
 				try {
@@ -842,9 +819,10 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		}
 	}
 
+	// FONCTION - HANDLER qui gère l'envoie des messages au robot et qui détecte n'importe quel changement de
+	// statut de connexion entre le téléphone et le robot
 	// The Handler that gets information back from the BluetoothChatService
 	private final Handler mHandler = new Handler() {
-
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
