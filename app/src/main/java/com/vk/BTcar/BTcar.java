@@ -375,7 +375,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 
 		alertDialogBuilder
 				.setCancelable(false)
-				.setIcon(getResources().getDrawable(R.drawable.fin_icon))
 				.setPositiveButton("OK",new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,int id) {
 						dialog.cancel();
@@ -646,8 +645,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 				break;
 			// BOUTON pour stopper le robot
 			case R.id.but_stop:
-				Log.d("LOG", "STOP");
-
 				CON = STR_STOP;
 				mChatService.write(STR_STOP.getBytes());
 				break;
@@ -739,7 +736,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 				CON = STR_ARRET_CMD;
 				mChatService.write(STR_ARRET_CMD.getBytes());
 
-				disAble();
+				Able();
 
 				STR_MODE_COMBAT = 0;
 				btn_bz.setEnabled(true);
@@ -750,9 +747,6 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 				handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
-								/* b_desactiver_emetteur.setEnabled(false);
-								b_activer_emetteur.setEnabled(true); */
-
 						// MAJ de la couleur de led d'indication si l'émetteur est activé ou pas
 						((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
 
@@ -768,7 +762,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 
 	// COUNTDOWN_TIMER qui vérifie si le match entre les deux robots de 3 minutes est terminée
 	private void startTimer_match_chrono() {
-		chrono_countdowntimer = new CountDownTimer(120000, 1000) {
+		chrono_countdowntimer = new CountDownTimer(180000, 1000) {
 			@Override
 			public void onTick(long millisUntilFinished) {
 			}

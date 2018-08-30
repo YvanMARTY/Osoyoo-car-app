@@ -37,20 +37,28 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <!-- STATUT DE CONNEXION -->
-    <string name="connecteok">Connecté au robot !</string>
-    <string name="connexionencours">Connexion en cours ...</string>
-    <string name="nonconnecte">Non connecté !</string>
+    <!-- "STRINGS" AJOUTES -->
+        <!-- STATUT DE CONNEXION -->
+        <string name="connecteok">Connecté au robot !</string>
+        <string name="connexionencours">Connexion en cours ...</string>
+        <string name="nonconnecte">Non connecté !</string>
 
-    <!-- STRING ADDITIONNELS -->
-    <string name="upd_param_obstacles">Modifier les paramètres d\'évitement d\'obstacles :</string>
-    <string name="logs_effaces">Console de log du robot effacés</string>
-    <string name="txt_init"> :  Initialisation du score en cours ...</string>
-    <string name="mode_evitement_enable">Mode évitement d\'obstacles activé !</string>
-    <string name="mode_combat_already">Robot déjà en mode combat !</string>
-    <string name="mode_combat_enable">Mode combat activé !</string>
-    <string name="dde_enable_modecombat">Veuillez activer le mode combat !</string>
-    <string name="finmatch_tps"><b>FIN DU MATCH !</b>\n\nTEMPS ECOULE !</string>
-    <string name="finmatch_score"><b>FIN DU MATCH !</b>\n\nLIMITE DE SCORE ATTEINTE !</string>
+        <!-- MODE EVITEMENT OBSTACLES -->
+        <string name="upd_param_obstacles">Modifier les paramètres d\'évitement d\'obstacles :</string>
+        <string name="mode_evitement_enable">Mode évitement d\'obstacles activé !</string>
 
+        <!-- ALERTDIALOG -->
+        <string name="logs_effaces">Console de log du robot effacés</string>
+
+        <!-- L'INIT. SCORE -->
+        <string name="txt_init"> :  Initialisation du score en cours ...</string>
+
+        <!-- MODE COMBAT -->
+        <string name="mode_combat_already">Robot déjà en mode combat !</string>
+        <string name="mode_combat_enable">Mode combat activé !</string>
+        <string name="dde_enable_modecombat">Veuillez activer le mode combat !</string>
+
+        <!-- FIN DE MATCH -->
+        <string name="finmatch_tps"><b>FIN DU MATCH !</b>\n\nTEMPS ECOULE !</string>
+        <string name="finmatch_score"><b>FIN DU MATCH !</b>\n\nLIMITE DE SCORE ATTEINTE !</string>
 </resources>

@@ -95,60 +95,60 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 		setContentView(R.layout.wifi);
 
 		// liten buttons
-		btn_xj = (Button) findViewById(R.id.w_xj);
+		btn_xj = findViewById(R.id.w_xj);
 		btn_xj.setOnClickListener(this);
 
-		btn_bz = (Button) findViewById(R.id.w_bz);
+		btn_bz = findViewById(R.id.w_bz);
 		btn_bz.setOnClickListener(this);
 
-		btn_sz = (Button) findViewById(R.id.w_sz);
+		btn_sz = findViewById(R.id.w_sz);
 		btn_sz.setOnClickListener(this);
 
-		btn_con = (Button) findViewById(R.id.w_con);
+		btn_con = findViewById(R.id.w_con);
 		btn_con.setOnClickListener(this);
 
 		// Récupération du bouton "Activer l'émetteur"
-		b_activer_emetteur = (Button) findViewById(R.id.w_activer_emetteur);
+		b_activer_emetteur = findViewById(R.id.w_activer_emetteur);
 		b_activer_emetteur.setOnTouchListener(this);
 		b_activer_emetteur.setEnabled(true);
 
 		// Récupération du bouton "Désactiver l'émetteur"
-		b_desactiver_emetteur = (Button) findViewById(R.id.w_desactiver_emetteur);
+		b_desactiver_emetteur = findViewById(R.id.w_desactiver_emetteur);
 		b_desactiver_emetteur.setOnTouchListener(this);
 		b_desactiver_emetteur.setEnabled(false);
 
 		// Récupération de la led indiquant l'état des émetteurs
-		etat_emetteur = (Button) findViewById(R.id.etat_emetteur);
+		etat_emetteur = findViewById(R.id.etat_emetteur);
 		etat_emetteur.setOnTouchListener(this);
 		etat_emetteur.setEnabled(false);
 		// MAJ DE LA COULEUR DE LA LED
 		((GradientDrawable) etat_emetteur.getBackground()).setColor(Color.RED);
 
 		// Récupération du bouton "TIR"
-		btn_tir = (Button) findViewById(R.id.w_tir);
+		btn_tir = findViewById(R.id.w_tir);
 		btn_tir.setEnabled(false);
 		btn_tir.setOnTouchListener(this);
 
 		// Récupération du bouton "Init. score"
-		btn_init_score = (Button) findViewById(R.id.w_init_score);
+		btn_init_score = findViewById(R.id.w_init_score);
 		btn_init_score.setOnTouchListener(this);
 		btn_init_score.setEnabled(false);
 
-		btn_stop = (Button) findViewById(R.id.but_stop);
+		btn_stop = findViewById(R.id.but_stop);
 		btn_stop.setOnClickListener(this);
 
 		// touch liten
-		btn_up = (Button) findViewById(R.id.but_up);
-		btn_back = (Button) findViewById(R.id.but_below);
-		btn_left = (Button) findViewById(R.id.but_left);
-		btn_right = (Button) findViewById(R.id.but_right);
+		btn_up = findViewById(R.id.but_up);
+		btn_back = findViewById(R.id.but_below);
+		btn_left = findViewById(R.id.but_left);
+		btn_right = findViewById(R.id.but_right);
 
 		btn_up.setOnTouchListener(this);
 		btn_back.setOnTouchListener(this);
 		btn_left.setOnTouchListener(this);
 		btn_right.setOnTouchListener(this);
 
-		con_text = (TextView) findViewById(R.id.textView);
+		con_text = findViewById(R.id.textView);
 		con_text.setText(con_text.getText(), TextView.BufferType.EDITABLE);
 		con_text.setOnClickListener(this);
 //				setOnLongClickListener(new View.OnLongClickListener() {
@@ -159,8 +159,8 @@ public class MainActivity extends Activity implements OnTouchListener,OnClickLis
 //						  return true;
 //					 }
 //				 });
-		title = (TextView) findViewById(R.id.title);
-		scro = (ScrollView) findViewById(R.id.scro);
+		title = findViewById(R.id.title);
+		scro = findViewById(R.id.scro);
 
 		// disAble();
 

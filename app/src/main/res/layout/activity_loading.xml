@@ -67,6 +67,6 @@
         android:gravity="center"
         android:text="Developed by Yvan\nTested by Emile\nApproved by Kavirthan"
         android:textColor="@android:color/black"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
 </RelativeLayout>
