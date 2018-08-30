@@ -244,7 +244,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 	}
 
 	// FONCTION qui désactive les boutons de l'application du robot
-	private void disAble(){
+	private void disAble() {
 		btn_stop.setEnabled(false);
 		btn_up.setEnabled(false);
 		btn_back.setEnabled(false);
@@ -887,7 +887,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 						handler.postDelayed(new Runnable() {
 							@Override
 							public void run() {
-								disAble();
+								Able();
 
 								alertdialog_builder("fin_score");
 
