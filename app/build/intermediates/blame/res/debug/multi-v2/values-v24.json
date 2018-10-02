@@ -4,7 +4,7 @@
             "outputFile": "D:\\yvanm\\Desktop\\CPI 1\\PROJET D'ETUDE\\PROJET D_ETUDE\\Osoyoo-car-app\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\58df33576f3b3a091b24475084b155a6\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\d4982924095ab83bb8400cb6cf58ea20\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\55ac9ade15c2c921e044bf5b4d00b3d7\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\yvanm\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\6406ec81d886bb7a3c320b0e4a456676\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

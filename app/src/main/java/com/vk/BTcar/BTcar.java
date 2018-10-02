@@ -760,9 +760,9 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 		chrono_countdowntimer.cancel();
 	}
 
-	// COUNTDOWN_TIMER qui vérifie si le match entre les deux robots de 3 minutes est terminée
+	// COUNTDOWN_TIMER qui vérifie si le match entre les deux robots de 58 minutes est terminée
 	private void startTimer_match_chrono() {
-		chrono_countdowntimer = new CountDownTimer(180000, 1000) {
+		chrono_countdowntimer = new CountDownTimer(3480000, 1000) {
 			@Override
 			public void onTick(long millisUntilFinished) {
 			}
@@ -853,7 +853,7 @@ public class BTcar extends Activity implements OnTouchListener,OnClickListener {
 					}
 					break;
 				case MESSAGE_DEVICE_NAME:
-					// save the connected device's name
+				// save the connected device's name
 //				mConnectedDeviceName = msg.getData().getString(DEVICE_NAME);
 //				Toast.makeText(getApplicationContext(),
 //						"Connected to " + mConnectedDeviceName,
